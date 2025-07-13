@@ -39,5 +39,3 @@
   - Reportes de rentabilidad
 
 ---
-
-## Propuestas de funcionalidades a agregar y/o modificar
