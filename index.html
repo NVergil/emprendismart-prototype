@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmprendiSmart - Prototipo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1>EmprendiSmart</h1>
+        </header>
+
+        <nav class="app-nav">
+            <a href="#" class="nav-link active" data-target="content-module">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9z"/><path d="M12 8l-2 4 2 4 2-4-2-4z"/><path d="M12 12h.01"/></svg>
+                <span>Contenido</span>
+            </a>
+            <a href="#" class="nav-link" data-target="finances-module">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Finanzas</span>
+            </a>
+            <a href="#" class="nav-link" data-target="inventory-module">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                <span>Inventario</span>
+            </a>
+        </nav>
+
+        <main class="app-main">
+            <!-- A. Módulo de Contenido -->
+            <section id="content-module" class="content-section active">
+                <div class="card">
+                    <h2>Generador de Contenido para Redes Sociales</h2>
+                    <div class="form-group">
+                        <label for="content-prompt">Describe tu idea o producto:</label>
+                        <textarea id="content-prompt" rows="4" placeholder="Ej: Un nuevo café orgánico de Chiapas, con notas de chocolate y nuez..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="content-tone">Tono:</label>
+                            <select id="content-tone">
+                                <option>Amistoso</option>
+                                <option>Profesional</option>
+                                <option>Divertido</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="content-platform">Plataforma:</label>
+                            <select id="content-platform">
+                                <option>Instagram</option>
+                                <option>Facebook</option>
+                                <option>LinkedIn</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Generar Contenido</button>
+
+                    <div class="output-area">
+                        <h4>Resultado Generado</h4>
+                        <div class="generated-text">
+                            <p class="placeholder">Tu publicación generada aparecerá aquí...</p>
+                        </div>
+                        <div class="generated-hashtags">
+                            <span class="placeholder">Tus #hashtags se verán así</span>
+                            <span class="hashtag-pill">#moderno</span>
+                            <span class="hashtag-pill">#minimalista</span>
+                        </div>
+                        <div class="copy-buttons">
+                            <button class="btn btn-secondary">Copiar Texto</button>
+                            <button class="btn btn-secondary">Copiar Hashtags</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mini-guide">
+                    <h3>Consejos rápidos</h3>
+                    <p>Para mejores resultados, sé específico en tu descripción. Menciona características, beneficios y a quién te diriges.</p>
+                </div>
+            </section>
+
+            <!-- B. Módulo de Finanzas -->
+            <section id="finances-module" class="content-section">
+                <div class="card">
+                    <h2>Gestión de Finanzas Básicas</h2>
+                    <div class="balance-display">
+                        Balance Actual: <span>$300.00</span>
+                    </div>
+                    <form class="transaction-form">
+                        <input type="text" placeholder="Descripción (ej. Venta de café)">
+                        <input type="number" placeholder="Monto">
+                        <select>
+                            <option>Ingreso</option>
+                            <option>Egreso</option>
+                        </select>
+                        <button class="btn btn-primary">Registrar Transacción</button>
+                    </form>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>11/07/2025</td>
+                                    <td>Venta de 2 croissants</td>
+                                    <td class="income">+$50.00</td>
+                                </tr>
+                                <tr>
+                                    <td>10/07/2025</td>
+                                    <td>Compra de granos de café</td>
+                                    <td class="expense">-$120.00</td>
+                                </tr>
+                                <tr>
+                                    <td>10/07/2025</td>
+                                    <td>Venta de 1 Americano</td>
+                                    <td class="income">+$35.00</td>
+                                </tr>
+                                 <tr>
+                                    <td>09/07/2025</td>
+                                    <td>Pago de servicio de luz</td>
+                                    <td class="expense">-$450.00</td>
+                                </tr>
+                                 <tr>
+                                    <td>09/07/2025</td>
+                                    <td>Venta de 10 cafés</td>
+                                    <td class="income">+$785.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                 <div class="card">
+                    <h3>Calculadora de Precios de Venta</h3>
+                     <form class="transaction-form">
+                        <input type="number" placeholder="Costo del producto">
+                        <input type="number" placeholder="Margen de ganancia (%)">
+                        <button class="btn btn-primary">Calcular</button>
+                    </form>
+                    <div class="price-suggestion">
+                        Precio Sugerido: <span>$XX.XX</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- C. Módulo de Inventario -->
+            <section id="inventory-module" class="content-section">
+                <div class="card">
+                    <h2>Gestión de Inventario (Básico)</h2>
+                    <form class="transaction-form">
+                        <input type="text" placeholder="Nombre del producto">
+                        <input type="number" placeholder="Cantidad inicial">
+                        <input type="text" placeholder="Unidad (ej. kg, uds)">
+                        <button class="btn btn-primary">Añadir Producto</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Lista de Productos</h3>
+                    <ul class="product-list">
+                        <li>
+                            <span>Café en grano - 10 kg</span>
+                            <div class="product-status"></div>
+                        </li>
+                        <li>
+                            <span>Croissants - 25 unidades</span>
+                             <div class="product-status"></div>
+                        </li>
+                        <li class="low-stock-item">
+                            <span>Leche de almendras - 2 litros</span>
+                            <div class="product-status">
+                                <span class="low-stock-alert">¡Bajo Stock!</span>
+                            </div>
+                        </li>
+                         <li>
+                            <span>Vasos de papel - 150 unidades</span>
+                             <div class="product-status"></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>

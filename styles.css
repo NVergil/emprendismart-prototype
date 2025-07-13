@@ -1,0 +1,364 @@
+/* --- VARIABLES Y RESETEO --- */
+:root {
+    --color-primary: #4f46e5; /* Un púrpura/azul moderno */
+    --color-accent: #10b981; /* Verde para ingresos o éxito */
+    --color-danger: #ef4444; /* Rojo para egresos o alertas */
+    --color-warning: #f59e0b; /* Naranja para advertencias */
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+    --color-background: #f9fafb;
+    --color-surface: #ffffff;
+    --color-border: #e5e7eb;
+
+    --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --spacing-unit: 8px;
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+/* --- ESTRUCTURA PRINCIPAL Y NAVEGACIÓN --- */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing-unit) * 2);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+}
+
+.app-header .logo {
+    margin-right: var(--spacing-unit);
+}
+
+.app-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.app-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: calc(var(--spacing-unit) * 2);
+    padding-bottom: calc(var(--spacing-unit) * 10); /* Espacio para la nav móvil */
+}
+
+.app-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--spacing-unit) 0;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    padding: var(--spacing-unit);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.nav-link span {
+    font-size: 0.75rem;
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+}
+
+.nav-link:hover {
+    background-color: var(--color-background);
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.content-section {
+    display: none;
+    gap: calc(var(--spacing-unit) * 2);
+    flex-direction: column;
+}
+
+.content-section.active {
+    display: flex;
+}
+
+/* --- COMPONENTES REUTILIZABLES --- */
+.card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: calc(var(--spacing-unit) * 3);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-unit);
+    color: var(--color-text-primary);
+}
+
+.btn {
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-background);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.form-group {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-unit);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: calc(var(--spacing-unit) * 1.5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-surface);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px #c7d2fe;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.placeholder {
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* --- ESTILOS ESPECIALIZADOS POR MÓDULO --- */
+
+/* Módulo Contenido */
+.output-area {
+    margin-top: calc(var(--spacing-unit) * 3);
+    border-top: 1px solid var(--color-border);
+    padding-top: calc(var(--spacing-unit) * 2);
+}
+.generated-text {
+    background-color: var(--color-background);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius);
+    min-height: 80px;
+}
+.generated-hashtags {
+    margin-top: var(--spacing-unit);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-unit);
+}
+.hashtag-pill {
+    background-color: #e0e7ff;
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.copy-buttons {
+    margin-top: calc(var(--spacing-unit) * 2);
+    display: flex;
+    gap: var(--spacing-unit);
+}
+
+/* Módulo Finanzas */
+.balance-display {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+.balance-display span {
+    color: var(--color-accent);
+}
+.transaction-form {
+    display: grid;
+    gap: var(--spacing-unit);
+    grid-template-columns: 1fr;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: calc(var(--spacing-unit) * 1.5);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+.income { color: var(--color-accent); }
+.expense { color: var(--color-danger); }
+.price-suggestion {
+    margin-top: var(--spacing-unit);
+    font-weight: 600;
+}
+
+/* Módulo Inventario */
+.product-list {
+    list-style: none;
+}
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-unit) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.product-list li:last-child {
+    border-bottom: none;
+}
+.low-stock-alert {
+    color: var(--color-warning);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- LAYOUT PARA ESCRITORIO (min-width: 768px) --- */
+@media (min-width: 768px) {
+    .app-container {
+        flex-direction: row;
+    }
+
+    .app-header {
+        display: none; /* Ocultamos el header móvil */
+    }
+
+    .app-nav {
+        position: static;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        width: 220px;
+        height: 100vh;
+        padding: calc(var(--spacing-unit) * 2);
+        border-top: none;
+        border-right: 1px solid var(--color-border);
+    }
+
+    .nav-link {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: var(--spacing-unit);
+        padding: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .nav-link svg {
+        margin-bottom: 0;
+        margin-right: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .nav-link span {
+        font-size: 1rem;
+    }
+    
+    .nav-link.active {
+        background-color: #eef2ff;
+    }
+
+    .app-main {
+        padding: calc(var(--spacing-unit) * 4);
+        padding-bottom: calc(var(--spacing-unit) * 4); /* Reset padding móvil */
+    }
+
+    .transaction-form {
+        grid-template-columns: 2fr 1fr 1fr auto;
+    }
+}
