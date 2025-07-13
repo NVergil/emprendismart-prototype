@@ -38,4 +38,42 @@
   - Cálculo automático de márgenes
   - Reportes de rentabilidad
 
+## 👥 Integrantes del Equipo: Carreras y Ubicación
+
+- **Dante Jackson**
+  - Carrera: Administración de Tecnologías de la Información
+  - Origen: Estado de México
+
+- **Adán Salomón**
+  - Carrera: Licenciatura en Ingeniería en Sistemas Computacionales
+  - Origen: Estado de México
+
+- **Alan Terrones**
+  - Carrera: Ingeniería Industrial (estudiante)
+  - Origen: Piura, Perú (Latinoamericano)
+
+- **Alejandra Peláez**
+  - Carreras: Ingeniería Industrial y Administración; Tecnóloga en Formulación de Proyectos (SENA); Especialización en Gestión de Proyectos (Google)
+  - Origen: Jamundí, Valle del Cauca, Colombia
+
+- **Roberto Carlos**
+  - Carrera: Licenciatura en Pedagogía
+  - Origen: No especificado
+
+- **Eurídice Guzmán (Euri)**
+  - Carrera: Pedagogía
+  - Origen: Ciudad de México (CDMX)
+
+- **Paulina**
+  - Carrera: Criminología
+  - Origen: Ciudad de México (CDMX)
+
+- **Shei**
+  - Carrera: Ingeniería en Sistemas Computacionales
+  - Origen: Ciudad de México (CDMX)
+
+- **José Luis Apolinar**
+  - Carrera: Ingeniería en Sistemas Computacionales
+  - Origen: Estado de México
+
 ---
